@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Adam Straker builds ecosystems, partner programs and sponsorships. Portfolio, services, podcast and speaking.">
+<title>Adam Straker | Partnerships and Ecosystem Building</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap">
+<style>
+/* Layout: a navy hero with a small network drawing, then evidence in plain sections: numbers, builds, stories, method, podcast, contact. */
+:root {
+  --bg: #F4F7F8;
+  --surface: #FFFFFF;
+  --fg: #1B2A31;
+  --muted: #4A606B;
+  --line: #D3DDE2;
+  --brand: #2E5162;      /* navy, used for text accents on light */
+  --teal: #4F8A8B;
+  --accent: #D16F37;     /* orange, marks and highlights only */
+  --hero-bg: #2E5162;
+  --hero-fg: #FFFFFF;
+  --hero-muted: #C5D6DC;
+  --node: #8FC1C2;
+  --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F181D; --surface: #172329; --fg: #E6EDF0; --muted: #9DB1BA; --line: #2A3A42;
+    --brand: #8FC1C2; --teal: #6FA9AA; --accent: #E58A56;
+    --hero-bg: #16303C; --hero-fg: #FFFFFF; --hero-muted: #B7CBD2; --node: #8FC1C2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F181D; --surface: #172329; --fg: #E6EDF0; --muted: #9DB1BA; --line: #2A3A42;
+  --brand: #8FC1C2; --teal: #6FA9AA; --accent: #E58A56;
+  --hero-bg: #16303C; --hero-fg: #FFFFFF; --hero-muted: #B7CBD2; --node: #8FC1C2;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0; }
+a { color: var(--brand); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
+p { margin: 0; max-width: 65ch; }
+.wrap { max-width: 1040px; margin: 0 auto; }
+.bleed { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+
+header.top { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between; padding-block: 18px; }
+.mark { font-family: var(--display); font-weight: 800; letter-spacing: .02em; color: var(--fg); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--brand); text-decoration: underline; }
+
+.hero { background: var(--hero-bg); color: var(--hero-fg); border-radius: 14px; padding: clamp(24px, 5vw, 56px); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.hero .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--hero-muted); margin-bottom: 14px; }
+.hero h1 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; }
+.hero p.lead { margin-top: 18px; color: var(--hero-muted); font-size: 17px; }
+.hero .cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 14px; padding: 11px 18px; border-radius: 8px; text-decoration: none; border: 2px solid transparent; cursor: pointer; }
+.btn.solid { background: var(--accent); color: #1B1209; }
+.btn.line { border-color: var(--hero-muted); color: var(--hero-fg); background: transparent; }
+.net { width: 100%; height: auto; max-height: 320px; }
+.net text { font-family: var(--display); font-size: 11px; font-weight: 700; fill: var(--hero-fg); }
+.net .edge { stroke: var(--node); stroke-width: 1.4; opacity: .55; }
+.net .edge2 { stroke: var(--node); stroke-width: 1; opacity: .3; stroke-dasharray: 3 4; }
+.net .n { fill: var(--node); }
+.net .core { fill: var(--accent); }
+.net .core-t { fill: #1B1209; font-size: 12px; }
+.net .ring { fill: none; stroke: var(--node); opacity: .25; }
+
+section { padding-top: clamp(44px, 7vw, 76px); }
+.kicker { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+section > .wrap > h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin-top: 8px; }
+.sub { margin-top: 10px; color: var(--muted); }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 28px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stat { padding: 18px 16px 18px 0; }
+.stat + .stat { padding-left: 20px; border-left: 1px solid var(--line); }
+.stat b { display: block; font-family: var(--display); font-size: clamp(26px, 3.6vw, 36px); font-weight: 800; color: var(--brand); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 18px; margin-top: 28px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card .tag { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); font-weight: 600; }
+.card h3 { font-size: 18px; font-weight: 700; }
+.card p { font-size: 15px; color: var(--muted); }
+.card .proves { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--line); font-size: 14px; color: var(--fg); }
+
+.card ul { margin: 0; padding-left: 18px; font-size: 15px; color: var(--muted); display: grid; gap: 6px; }
+.card .when { font-size: 14px; color: var(--muted); }
+.card .when b { color: var(--fg); font-weight: 600; }
+.also { margin-top: 22px; padding: 16px 20px; border: 1px dashed var(--line); border-radius: 10px; font-size: 15px; color: var(--muted); max-width: none; }
+.also b { color: var(--fg); font-weight: 600; }
+.sub-h { font-size: 18px; font-weight: 700; margin-top: 40px; }
+.track { list-style: none; margin: 14px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.track .what b { font-weight: 600; }
+.track li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.track .role { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); font-weight: 600; padding-top: 3px; }
+.track .what { font-size: 15px; }
+.track .what span { color: var(--muted); }
+.stories { display: grid; gap: 18px; margin-top: 28px; }
+.story { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: clamp(18px, 3vw, 28px); display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: 20px 32px; }
+.story .meta .org { font-size: 13px; color: var(--muted); }
+.story .meta .badge { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); color: var(--brand); }
+.story h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.story dl { margin: 0; display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 8px 14px; font-size: 15px; }
+.story dt { font-weight: 600; color: var(--teal); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding-top: 3px; }
+.story dd { margin: 0; }
+.story .lesson { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 14px; font-weight: 500; }
+.story .lesson::before { content: ""; display: inline-block; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; margin-right: 10px; }
+
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 0; margin-top: 28px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
+.method div { padding: 20px; border-right: 1px solid var(--line); }
+.method div:last-child { border-right: 0; }
+.method h3 { font-size: 16px; color: var(--brand); margin-bottom: 6px; }
+.method p { font-size: 14.5px; color: var(--muted); }
+
+.pod { margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 10px; }
+.pod h3 { font-size: 22px; }
+.pod p { color: var(--muted); }
+
+.contact { background: var(--hero-bg); color: var(--hero-fg); border-radius: 14px; padding: clamp(24px, 5vw, 48px); margin-top: clamp(44px, 7vw, 76px); display: grid; gap: 16px; }
+.contact h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; }
+.contact p { color: var(--hero-muted); }
+.contact .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.addr { font-family: var(--display); font-weight: 700; user-select: all; word-break: break-all; }
+footer { padding-block: 32px 40px; font-size: 13px; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .story { grid-template-columns: minmax(0, 1fr); }
+  .track li { grid-template-columns: minmax(0, 1fr); }
+  .method div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .method div:last-child { border-bottom: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#top">ADAM STRAKER</a>
+    <nav aria-label="Sections">
+      <a href="#builds">Builds</a>
+      <a href="#services">Services</a>
+      <a href="#stories">Stories</a>
+      <a href="#method">Method</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="top">
+    <div>
+      <div class="eyebrow">Partnerships · Ecosystem building · Business development</div>
+      <h1>I build ecosystems that turn introductions into pipeline.</h1>
+      <p class="lead">15+ years across government, defence, health and startups. I map a sector, bring its players into one room, and turn that into programs, partners and revenue that leadership can act on.</p>
+      <div class="cta">
+        <a class="btn solid" href="#builds">See what I've built</a>
+        <a class="btn line" href="#services">Work with me</a>
+      </div>
+    </div>
+    <svg class="net" viewBox="0 0 360 300" role="img" aria-label="A network drawing with Adam at the centre, connected to government, defence, health, startups, corporates and investors">
+      <circle class="ring" cx="180" cy="150" r="105"/>
+      <g>
+        <line class="edge2" x1="285" y1="150" x2="232.5" y2="241"/>
+        <line class="edge2" x1="232.5" y1="241" x2="127.5" y2="241"/>
+        <line class="edge2" x1="127.5" y1="241" x2="75" y2="150"/>
+        <line class="edge2" x1="75" y1="150" x2="127.5" y2="59"/>
+        <line class="edge2" x1="127.5" y1="59" x2="232.5" y2="59"/>
+        <line class="edge2" x1="232.5" y1="59" x2="285" y2="150"/>
+        <line class="edge" x1="180" y1="150" x2="285" y2="150"/>
+        <line class="edge" x1="180" y1="150" x2="232.5" y2="241"/>
+        <line class="edge" x1="180" y1="150" x2="127.5" y2="241"/>
+        <line class="edge" x1="180" y1="150" x2="75" y2="150"/>
+        <line class="edge" x1="180" y1="150" x2="127.5" y2="59"/>
+        <line class="edge" x1="180" y1="150" x2="232.5" y2="59"/>
+      </g>
+      <circle class="n" cx="285" cy="150" r="8"/><text x="285" y="130" text-anchor="middle">Government</text>
+      <circle class="n" cx="232.5" cy="241" r="8"/><text x="232.5" y="270" text-anchor="middle">Corporates</text>
+      <circle class="n" cx="127.5" cy="241" r="8"/><text x="127.5" y="270" text-anchor="middle">Investors</text>
+      <circle class="n" cx="75" cy="150" r="8"/><text x="75" y="130" text-anchor="middle">Startups</text>
+      <circle class="n" cx="127.5" cy="59" r="8"/><text x="127.5" y="38" text-anchor="middle">Health</text>
+      <circle class="n" cx="232.5" cy="59" r="8"/><text x="232.5" y="38" text-anchor="middle">Defence</text>
+      <circle class="core" cx="180" cy="150" r="24"/><text class="core-t" x="180" y="154" text-anchor="middle">AS</text>
+    </svg>
+  </div>
+
+  <section id="builds">
+    <div class="wrap">
+      <div class="kicker">Built by me</div>
+      <h2>Programs and ecosystems I've started</h2>
+      <p class="sub">Each began with no playbook and a sector I had to learn quickly.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="tag">Communitech</div>
+          <h3>Future of Cities</h3>
+          <p>Built from scratch with no team. Brought corporate partners in and brokered introductions to founders: 143 introductions and a $3M pipeline across six buyer personas.</p>
+          <div class="proves">Proves: I can start a program, a partner model and a pipeline at the same time.</div>
+        </article>
+        <article class="card">
+          <div class="tag">Toronto Region Board of Trade</div>
+          <h3>Smart Cities Working Group</h3>
+          <p>Founded it and mapped a 60-organization ecosystem across civic tech, mobility and government. Tied it to the Board's advocacy strategy so talk turned into action. It drew new members from tech and professional services, and had its own governance and an annual evaluation report.</p>
+          <div class="proves">Proves: I can get a sector to act, not just talk.</div>
+        </article>
+        <article class="card">
+          <div class="tag">Communitech · supporting role</div>
+          <h3>Future of National Security Innovation</h3>
+          <p>Asked to support the program after Future of Cities worked. Helped connect public and private-sector defence stakeholders including CSIS, FedDev Ontario and Lockheed Martin.</p>
+          <div class="proves">Proves: I can get fluent in an unfamiliar sector fast.</div>
+        </article>
+        <article class="card">
+          <div class="tag">Generations Collective</div>
+          <h3>Innovation and ecosystem partnerships</h3>
+          <p>As Senior Director, worked on the Femtech Hub launch, the Elder Care Innovation partnership with CAN Health Network, and corporate founding-partner outreach.</p>
+          <div class="proves">Proves: I can build partner programs in health.</div>
+        </article>
+        <article class="card">
+          <div class="tag">Independent</div>
+          <h3>The Human Algorithm</h3>
+          <p>Created the brand and built a podcast on where people and technology meet: content, guest sourcing, video editing and copyright clearance. Guests include founders, CEOs, policy experts and authors.</p>
+          <div class="proves">Proves: I can start something from nothing and make experts want to take part.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="kicker">Work with me</div>
+      <h2>Three ways I can help</h2>
+      <p class="sub">Each is built on work I've already done.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="tag">Fractional · monthly</div>
+          <h3>Partnership and market development</h3>
+          <p>For startups and scale-ups that want access to a sector. I run the partner pipeline so your team can focus on product and customers.</p>
+          <ul>
+            <li>Targeted introductions to partners and buyers</li>
+            <li>A managed partner pipeline with regular reporting</li>
+            <li>Events and convenings that put the right people in the room</li>
+          </ul>
+          <div class="proves when"><b>Best for:</b> companies entering a new sector or region.</div>
+        </article>
+        <article class="card">
+          <div class="tag">Project, then retainer</div>
+          <h3>Sponsorship and partner program design</h3>
+          <p>For incubators, associations and universities that need sponsor revenue. I design tiered partner packages and the program around them, using the model I built at Communitech.</p>
+          <ul>
+            <li>Sponsor offer and tier design</li>
+            <li>Prospect list and outreach plan</li>
+            <li>Launch support and a renewal plan</li>
+          </ul>
+          <div class="proves when"><b>Best for:</b> ecosystem organizations with a program but no sponsor model.</div>
+        </article>
+        <article class="card">
+          <div class="tag">Fixed scope · 4 to 6 weeks</div>
+          <h3>Ecosystem Map</h3>
+          <p>For organizations entering or organizing a sector. I map the players, find where to intervene, and deliver a strategy leadership can act on.</p>
+          <ul>
+            <li>Landscape of associations, institutions, government, investors and startups</li>
+            <li>Opportunity assessment and recommended first moves</li>
+            <li>Executive-ready report and briefing</li>
+          </ul>
+          <div class="proves when"><b>Best for:</b> organizations that want a clear picture and a plan before committing to a larger program.</div>
+        </article>
+      </div>
+      <p class="also"><b>Also available:</b> innovation programming, podcast production, speaker sourcing and video editing.</p>
+    </div>
+  </section>
+
+  <section id="stories">
+    <div class="wrap">
+      <div class="kicker">Field notes</div>
+      <h2>Three stories, including a setback</h2>
+      <div class="stories">
+        <article class="story">
+          <div class="meta"><div class="org">Toronto Region Board of Trade</div><span class="badge">Far exceeded expectations</span></div>
+          <div>
+            <h3>From talking to doing</h3>
+            <dl>
+              <dt>Context</dt><dd>Organizations in the smart cities space were talking a lot and doing little.</dd>
+              <dt>Action</dt><dd>Founded the Smart Cities Working Group and connected it to the Board's advocacy strategy, so the conversations had somewhere to go.</dd>
+              <dt>Result</dt><dd>It became a major draw for new members from tech and professional services, and grew so fast it outgrew the space available for meetings.</dd>
+            </dl>
+          </div>
+          <p class="lesson">Tie a forum to a real goal and the talk turns into action.</p>
+        </article>
+        <article class="story">
+          <div class="meta"><div class="org">Communitech</div><span class="badge">143 introductions · $3M pipeline</span></div>
+          <div>
+            <h3>Future of Cities, from a laptop</h3>
+            <dl>
+              <dt>Context</dt><dd>No program existed for connecting corporate buyers with city-focused founders.</dd>
+              <dt>Action</dt><dd>Built it alone: the program, the partner offer, and a way to track who met whom.</dd>
+              <dt>Result</dt><dd>143 introductions and a $3M pipeline across six buyer personas, and an invitation to help build the National Security program.</dd>
+            </dl>
+          </div>
+          <p class="lesson">When introductions are tracked and followed up, they become pipeline.</p>
+        </article>
+        <article class="story">
+          <div class="meta"><div class="org">The Logic</div><span class="badge">The one that didn't hold</span></div>
+          <div>
+            <h3>A sales pipeline that depended on events</h3>
+            <dl>
+              <dt>Context</dt><dd>Joined as Head of Sales in 2019 with no corporate sales function in place.</dd>
+              <dt>Action</dt><dd>Built the first corporate sales pipeline and CRM.</dd>
+              <dt>Result</dt><dd>Most corporate revenue came from events. When COVID-19 suspended them, the role was eliminated.</dd>
+            </dl>
+          </div>
+          <p class="lesson">Revenue that depends on one format is fragile, so I now build partner models that can survive a change of format.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap">
+      <div class="kicker">How I work</div>
+      <h2>Map, convene, mobilize, report up</h2>
+      <p class="sub">The same four steps have run through every sector I've worked in.</p>
+      <div class="method">
+        <div><h3>Map</h3><p>Chart the associations, institutions, government, investors and startups, and find where an intervention would matter.</p></div>
+        <div><h3>Convene</h3><p>Bring the right people into one room around a shared forum that didn't exist before.</p></div>
+        <div><h3>Mobilize</h3><p>Turn the room into programs, partners and introductions that lead to real work.</p></div>
+        <div><h3>Report up</h3><p>Give leadership a landscape, a strategy and a case for action they can approve.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="podcast">
+    <div class="wrap">
+      <div class="kicker">Podcast</div>
+      <h2>The Human Algorithm</h2>
+      <div class="pod">
+        <h3>Where people and technology meet</h3>
+        <p>A podcast on the human side of technology. I created the brand and do every part of the work myself. Guests have included founders, CEOs, policy experts and authors.</p>
+        <div><a class="btn solid" href="https://www.youtube.com/@TheHumanAlgorithmPod" rel="noopener">Watch on YouTube</a></div>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Brand and point of view</h3><p>Built the name, identity and editorial stance: a humanist look at technology and who it serves.</p></article>
+        <article class="card"><h3>Guest sourcing</h3><p>Researched and approached experts directly, and secured guests with no prior relationship.</p></article>
+        <article class="card"><h3>Content and interviews</h3><p>Developed the questions and content for each episode, and host every conversation.</p></article>
+        <article class="card"><h3>Video editing</h3><p>Taught myself to edit video, and produce the episodes from recording to release.</p></article>
+        <article class="card"><h3>Copyright</h3><p>Learned the copyright rules for music, images and clips so the show uses material it has the right to use.</p></article>
+      </div>
+      <p class="also"><b>Guests and sponsors:</b> interested in appearing on the show or sponsoring an episode? Get in touch below.</p>
+    </div>
+  </section>
+
+  <section id="speaking">
+    <div class="wrap">
+      <div class="kicker">Speaking</div>
+      <h2>Talks, lectures and coaching</h2>
+      <p class="sub">I speak and teach on the work I've done, and on the ideas behind technology.</p>
+      <div class="grid">
+        <article class="card"><h3>Guest lectures</h3><p>For university and college programs in entrepreneurship, innovation and business, and in the arts and humanities.</p></article>
+        <article class="card"><h3>Keynotes and panels</h3><p>Talks and panel contributions for conferences, associations and ecosystem events.</p></article>
+        <article class="card"><h3>Emcee and moderator</h3><p>Hosting conferences and summits and moderating panels, with the interviewing practice of a podcast behind it.</p></article>
+        <article class="card"><h3>Public speaking coaching</h3><p>One-to-one coaching for founders and professionals who want to present and interview with confidence.</p></article>
+      </div>
+      <h3 class="sub-h">Guest lectures</h3>
+      <ul class="track" aria-label="Guest lectures">
+        <li><span class="role">Business</span><span class="what"><b>How Ecosystems Get Built</b><br><span>How to map a sector, bring its players together and turn the group into programs, partners and revenue. Drawn from Future of Cities and the Smart Cities Working Group.</span></span></li>
+        <li><span class="role">Ethics</span><span class="what"><b>Cautionary Tales</b><br><span>What literature and mythology warn us about a technologised future, and what they suggest we do about it.</span></span></li>
+        <li><span class="role">History</span><span class="what"><b>A Short History of Technology and Its Discontents</b><br><span>How earlier generations met new technology, and what their hopes and fears tell us about ours.</span></span></li>
+        <li><span class="role">Media</span><span class="what"><b>Building a Podcast from Nothing</b><br><span>Brand, guests, editing and copyright, from first idea to published episode.</span></span></li>
+        <li><span class="role">Any program</span><span class="what"><b>Speaking with Confidence</b><br><span>A practical session on presenting, interviewing and holding a room.</span></span></li>
+      </ul>
+      <h3 class="sub-h">Where I've spoken and hosted</h3>
+      <ul class="track" aria-label="Speaking and hosting experience">
+        <li><span class="role">Emcee</span><span class="what"><a href="https://www.virtualcarerehab.ca/conference" rel="noopener">Virtual Care Rehab Conference</a></span></li>
+        <li><span class="role">Host</span><span class="what">Communitech Future of Retail Summit</span></li>
+        <li><span class="role">Host</span><span class="what">Communitech Future of Cities Summit</span></li>
+        <li><span class="role">Speaker</span><span class="what">Future of Cities Summit</span></li>
+        <li><span class="role">Moderator</span><span class="what">Panels with leading infrastructure professionals <span>· 2023 and 2024</span></span></li>
+        <li><span class="role">Producer</span><span class="what">Content, planning and emcee work for more than 100 virtual and in-person events</span></li>
+      </ul>
+      <p class="also"><b>Topics:</b> ecosystem building, partnerships and sponsorship, innovation programming, building a podcast from scratch, the history of technology, and what literature and mythology warn us about a technologised future.</p>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="contact">
+      <h2>Let's talk</h2>
+      <p>I'm based in Brantford, Ontario, and open to partnerships, ecosystem and business development roles, and to advisory work.</p>
+      <div class="row">
+        <span class="addr" id="addr">adampmstraker@gmail.com</span>
+        <button class="btn solid" id="copy" type="button">Copy email</button>
+        <a class="btn line" href="https://www.linkedin.com/in/strakeradam" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Adam Straker · Brantford, Ontario</footer>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy');
+  var addr = document.getElementById('addr');
+  function select() {
+    var r = document.createRange(); r.selectNodeContents(addr);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  btn.addEventListener('click', function () {
+    var text = addr.textContent;
+    function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1800); }
+    try {
+      navigator.clipboard.writeText(text).then(done, function () { select(); btn.textContent = 'Press Ctrl/Cmd+C'; });
+    } catch (e) { select(); btn.textContent = 'Press Ctrl/Cmd+C'; }
+  });
+})();
+</script>
+</body>
+</html>
